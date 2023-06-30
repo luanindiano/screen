@@ -11,6 +11,7 @@ public class Principal {
         meuFilme.avalia(10);
         System.out.println(meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+        //teste
 
     }
 }
