@@ -13,5 +13,6 @@ public class Principal {
         System.out.println(meuFilme.pegaMedia());
         //teste
 
+
     }
 }
