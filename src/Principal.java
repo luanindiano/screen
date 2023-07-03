@@ -1,3 +1,5 @@
+import br.com.movie.netflixBay.calculos.CalculadoraDeTempo;
+import br.com.movie.netflixBay.calculos.FiltroDeRecomendacao;
 import br.com.movie.netflixBay.modelos.Filme;
 
 public class Principal {
@@ -13,5 +15,12 @@ public class Principal {
         meuFilme.avalia(10);
         System.out.println(meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtra(meuFilme);
     }
 }

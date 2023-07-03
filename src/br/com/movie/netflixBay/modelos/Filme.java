@@ -1,44 +1,21 @@
 package br.com.movie.netflixBay.modelos;
 
-public class Filme {
-    private String nome;
-    private int anoDeLancamento;
-    private boolean incluidoNoPlano;
-    private double somaDasAvaliacoes;
-    private int totalDeAvaliacoes;
-    private int duracaoEmMinutos;
+import br.com.movie.netflixBay.calculos.Classificacao;
 
-    public void setNome(String nome) {
-        this.nome = nome;
+public class Filme extends Titulo implements Classificacao {
+    private String diretor;
+
+    public String getDiretor() {
+        return diretor;
     }
 
-    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
-        this.incluidoNoPlano = incluidoNoPlano;
+    public void setDiretor(String diretor) {
+        this.diretor = diretor;
     }
 
-    public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
-    }
 
-    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
-        this.duracaoEmMinutos = duracaoEmMinutos;
-    }
-
-    public void exibeFichaTecnica(){
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoDeLancamento);
-    }
-
-    public void avalia(double nota){
-        somaDasAvaliacoes += nota;
-        totalDeAvaliacoes++;
-    }
-
-    public double pegaMedia(){
-        return somaDasAvaliacoes / totalDeAvaliacoes;
-    }
-
-    public int getTotalDeAvaliacoes(){
-        return totalDeAvaliacoes;
+    @Override
+    public int getClassificacao() {
+        return (int) pegaMedia() / 2; //fazendo casting
     }
 }
