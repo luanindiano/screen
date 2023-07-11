@@ -1,11 +1,14 @@
+package br.com.movie.netflixBay.principal;
+
 import br.com.movie.netflixBay.calculos.CalculadoraDeTempo;
 import br.com.movie.netflixBay.calculos.FiltroDeRecomendacao;
 import br.com.movie.netflixBay.modelos.Filme;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Pulp Fiction");
+        Filme meuFilme = new Filme("Pulp Fiction", 1990, "Tarantino");
         meuFilme.setAnoDeLancamento(1987);
         meuFilme.setDuracaoEmMinutos(180);
 
@@ -22,5 +25,9 @@ public class Principal {
 
         FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
         filtro.filtra(meuFilme);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(meuFilme);
+        System.out.println(listaDeFilmes.get(0).toString());
     }
 }
